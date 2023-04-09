@@ -1,5 +1,6 @@
 import { useState} from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import Email from './components/Email'
 import Pseudo from './components/Pseudo'
 import Password from './components/Password'
@@ -17,6 +18,8 @@ function Signup() {
     const [pseudoError, setPseudoError] = useState(true)
     const [passwordError, setPasswordError] = useState(true)
     const [confirmPasswordError, setConfirmPasswordError] = useState(true)
+    const [emailAlreadyExist, setEmailAlreadyExist] = useState(false)
+    const [pseudoAlreadyExist, setPseudoAlreadyExist] = useState(false)
 
     function handleSummit(e) {
         e.preventDefault()
@@ -24,8 +27,30 @@ function Signup() {
             console.log('error')
         }else {
             //TODO : request server with axios to create user
-            console.log('ok')
-            navigate('/')
+            const postData = {
+                email: email,
+                pseudo: pseudo,
+                password: password
+            }
+            axios.post('http://localhost:3001/api/auth/signup', postData)
+            .then((response) => {
+                console.log('Response:', response.data);
+                console.log('ok')
+                navigate('/')
+            })
+            .catch((error) => {
+                console.error('Error:', error.response.data.raison);
+                if (error.response.data.raison === 'email and pseudo already exist') {
+                    setEmailAlreadyExist(true)
+                    setPseudoAlreadyExist(true)
+                }
+                else if (error.response.data.raison === 'email already exist') {
+                    setEmailAlreadyExist(true)
+                }
+                else if (error.response.data.raison === 'pseudo already exist') {
+                    setPseudoAlreadyExist(true)
+                }
+            });
         }
     }   
 
@@ -34,9 +59,9 @@ function Signup() {
             <h1>S'inscrire</h1>
             <form onSubmit={handleSummit}>
 
-                <Email email={email} setEmail={setEmail} emailError={emailError} setEmailError={setEmailError} />
+                <Email email={email} setEmail={setEmail} emailError={emailError} setEmailError={setEmailError} emailAlreadyExist={emailAlreadyExist} setEmailAlreadyExist={setEmailAlreadyExist}/>
 
-                <Pseudo pseudo={pseudo} setPseudo={setPseudo} setPseudoError={setPseudoError} />
+                <Pseudo pseudo={pseudo} setPseudo={setPseudo} setPseudoError={setPseudoError} pseudoAlreadyExist={pseudoAlreadyExist} setPseudoAlreadyExist={setPseudoAlreadyExist}/>
 
                 <Password password={password} setPassword={setPassword} setPasswordError={setPasswordError} />
 
