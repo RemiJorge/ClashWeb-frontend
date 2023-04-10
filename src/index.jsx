@@ -14,11 +14,13 @@ import Error from './components/Error'
 import ForgetPassword from './pages/ForgetPassword'
 import ChangePassword from './pages/ChangePassword'
 import './styles/validator.css'
+import './styles/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Router>
+      <div className = "background">
       <Navigation/>
       <Routes>
         <Route index element={<Home/>}/>
@@ -32,6 +34,7 @@ root.render(
         <Route path="shop" element={<Shop/>}/>
         <Route path="*" element={<Error/>}/>
       </Routes>
+      </div>
     </Router>
   </React.StrictMode>
 )

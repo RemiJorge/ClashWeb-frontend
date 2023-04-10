@@ -1,4 +1,7 @@
 import {useEffect, useState} from 'react'
+import croix from '../../../assets/validator/croix.png'
+import check from '../../../assets/validator/check.png'
+import '../../../styles/validator.css'
 
 function ConfirmPassword({password, setConfirmPasswordError}) {
     
@@ -24,7 +27,11 @@ function ConfirmPassword({password, setConfirmPasswordError}) {
                 <button type="button" onClick={togglePassword}> 
                         {showPassword ? "Cacher le mot de passe" : "Afficher le mot de passe"}
                 </button>
-                <p className={samePassword ? "correct" : "incorrect"}>Les mots de passe {samePassword ? "sont" : "ne sont pas"} identiques</p>
+                {samePassword ? 
+                <div className="correct"><img src={check} alt="check" className="img-check" /><p>Les mots de passe sont identiques</p></div> : 
+                <div className="incorrect"><img src={croix} alt="croix" className="img-croix" /><p>Les mots de passe ne sont pas identiques</p></div>
+                }
+
             </div>
         )
     

@@ -5,6 +5,7 @@ import Email from './components/Email'
 import Pseudo from './components/Pseudo'
 import Password from './components/Password'
 import ConfirmPassword from './components/ConfirmPassword'
+import './styles/index.css'
 
 
 const serverUrl = process.env.REACT_APP_SERVER_URL
@@ -55,7 +56,7 @@ function Signup() {
     }   
 
     return (
-        <div>
+        <div className='container'>
             <h1>S'inscrire</h1>
             <form onSubmit={handleSummit}>
 

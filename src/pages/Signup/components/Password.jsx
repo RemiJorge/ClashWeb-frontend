@@ -1,4 +1,7 @@
 import {useState} from 'react';
+import croix from '../../../assets/validator/croix.png'
+import check from '../../../assets/validator/check.png'
+import '../../../styles/validator.css'
 
 function Password({password, setPassword, setPasswordError}) {
 
@@ -34,10 +37,18 @@ function Password({password, setPassword, setPasswordError}) {
             <button type="button" onClick={togglePassword}>
                     {showPassword ? "Cacher le mot de passe" : "Afficher le mot de passe"}
             </button>
-            <p className={validSize ? "correct" : "incorrect"}>Taille entre 8 et 20 caractères</p>
-            <p className={validCharacter ? "correct" : "incorrect"}>Caractères autorisés: lettres, chiffres, spéciaux </p>
-            <p className={validNumber ? "correct" : "incorrect"}>Au moins un chiffre</p>
-            <p className={validLetter ? "correct" : "incorrect"}>Au moins une lettre</p>
+            <div className={validSize ? "correct" : "incorrect"}>
+                {validSize ? <img src={check} alt="check" className='img-check' /> : <img src={croix} alt="check" className='img-croix'/>}
+                <p>Taille entre 8 et 20 caractères</p></div>
+            <div className={validCharacter ? "correct" : "incorrect"}>
+                {validCharacter ? <img src={check} alt="check" className='img-check' /> : <img src={croix} alt="check" className='img-croix'/>}
+                <p>Caractères autorisés: lettres, chiffres, spéciaux </p></div>
+            <div className={validNumber ? "correct" : "incorrect"}>
+                {validNumber ? <img src={check} alt="check" className='img-check' /> : <img src={croix} alt="check" className='img-croix'/>}
+                <p>Au moins un chiffre</p></div>
+            <div className={validLetter ? "correct" : "incorrect"}>
+                {validLetter ? <img src={check} alt="check" className='img-check' /> : <img src={croix} alt="check" className='img-croix'/>}
+                <p>Au moins une lettre</p></div>
             
         </div>
     )

@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import croix from '../../../assets/validator/croix.png'
+import check from '../../../assets/validator/check.png'
+import '../../../styles/validator.css'
 
 function Email({email, setEmail, emailError, setEmailError, emailAlreadyExist, setEmailAlreadyExist}) {
 
@@ -21,7 +24,9 @@ function Email({email, setEmail, emailError, setEmailError, emailAlreadyExist, s
                 value={email}
                 onChange={(e) => {handleEmail(e.target.value)}}
                 onBlur={() => setFirstTry(true)} />
-            {firstTry  && (emailError ? <p className='incorrect'>Incorrect</p> : <p className='correct'>Valide</p>)}
+            {firstTry  && (emailError ? 
+                <div className='incorrect'> <p><img src={croix} alt='non' className='img-croix' /> Incorrect</p> </div>: 
+                <div className='correct'> <img src={check} alt='oui' className='img-check' /> <p>Correct</p> </div>)}
             {emailAlreadyExist && <p className='incorrect'>Email déjà utilisé</p>}
         </div>
     )

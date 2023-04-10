@@ -1,4 +1,7 @@
 import {useState} from 'react';
+import croix from '../../../assets/validator/croix.png'
+import check from '../../../assets/validator/check.png'
+import '../../../styles/validator.css'
 
 function Pseudo({pseudo, setPseudo, setPseudoError, pseudoAlreadyExist, setPseudoAlreadyExist}) {
 
@@ -22,8 +25,12 @@ function Pseudo({pseudo, setPseudo, setPseudoError, pseudoAlreadyExist, setPseud
                 value={pseudo}
                 onChange={(e) => {handlePseudo(e.target.value)}}/>
             {pseudoAlreadyExist && <p className='incorrect'>Pseudo déjà utilisé</p>}
-            <p className={validSize ? "correct" : "incorrect"}>Taille entre 3 et 15 caractères</p>
-            <p className={validCharacter ? "correct" : "incorrect"}>Caractères autorisés: lettres, chiffres, _ et - </p>
+            <div className={validSize ? "correct" : "incorrect"}>
+                {<img src={validSize ? check : croix} alt={validSize ? 'oui' : 'non'} className='img-check' />}
+                <p>Taille entre 3 et 15 caractères</p></div>
+            <div className={validCharacter ? "correct" : "incorrect"}>
+                {<img src={validCharacter ? check : croix} alt={validCharacter ? 'oui' : 'non'} className='img-check' />}
+                <p>Caractères autorisés: lettres, chiffres, _ et -</p></div>
         </div>
     )
 

@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import '../../styles/navigation.css'
 
 function Navigation(){
     //verify if the user is connected
