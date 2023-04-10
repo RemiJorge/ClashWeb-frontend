@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import '../styles/validator.css'
 
 function Email({email, setEmail, emailError, setEmailError, emailAlreadyExist, setEmailAlreadyExist}) {
 

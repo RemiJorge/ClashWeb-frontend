@@ -1,8 +1,10 @@
-function Pseudo({pseudo, setPseudo}){
+function Pseudo({pseudo, setPseudo, setWrongPseudoOrPassword}) {
     return (
         <div>
             <label>Pseudo: </label>
-                <input type="text" value={pseudo} onChange={(e) => setPseudo(e.target.value)}/>
+                <input type="text" 
+                    value={pseudo} 
+                    onChange={(e) => {setPseudo(e.target.value); setWrongPseudoOrPassword(false)}}/>
         </div>
     )
 }

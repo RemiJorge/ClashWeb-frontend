@@ -4,14 +4,15 @@ import axios from 'axios'
 import Email from './components/Email'
 import Pseudo from './components/Pseudo'
 import Password from './components/Password'
-import ConfirmPassword from './components/ConfirmPassword.jsx'
+import ConfirmPassword from './components/ConfirmPassword'
 
+
+const serverUrl = process.env.REACT_APP_SERVER_URL
 
 function Signup() {
     const [email, setEmail] = useState('')
     const [pseudo, setPseudo] = useState('')
     const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
     const navigate = useNavigate()
 
     const [emailError, setEmailError] = useState(true)
@@ -26,17 +27,16 @@ function Signup() {
         if (emailError || passwordError || confirmPasswordError || pseudoError) {
             console.log('error')
         }else {
-            //TODO : request server with axios to create user
             const postData = {
                 email: email,
                 pseudo: pseudo,
                 password: password
             }
-            axios.post('http://localhost:3001/api/auth/signup', postData)
+            axios.post(`${serverUrl}/api/auth/signup`, postData)
             .then((response) => {
                 console.log('Response:', response.data);
                 console.log('ok')
-                navigate('/')
+                navigate('/login')
             })
             .catch((error) => {
                 console.error('Error:', error.response.data.raison);
@@ -65,7 +65,7 @@ function Signup() {
 
                 <Password password={password} setPassword={setPassword} setPasswordError={setPasswordError} />
 
-                <ConfirmPassword password={password} confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword} setConfirmPasswordError={setConfirmPasswordError} />
+                <ConfirmPassword password={password} setConfirmPasswordError={setConfirmPasswordError} />
 
                 <input type="submit" value="S'inscrire" />
             </form>
