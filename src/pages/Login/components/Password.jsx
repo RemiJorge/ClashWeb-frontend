@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function Password({password, setPassword, setWrongPseudoOrPassword}) {
+function Password({password, setPassword, setWrongEmailOrPassword}) {
 
     const [showPassword, setShowPassword] = useState(false)
 
@@ -13,7 +13,7 @@ function Password({password, setPassword, setWrongPseudoOrPassword}) {
             <label>Mot de passe: </label>
             <input type={showPassword ? "text" : "password"} 
                 value={password} 
-                onChange={(e) => {setPassword(e.target.value); setWrongPseudoOrPassword(false)}}/>
+                onChange={(e) => {setPassword(e.target.value); setWrongEmailOrPassword(false)}}/>
             <button type="button" onClick={togglePassword}>
                 {showPassword ? "Cacher le mot de passe" : "Afficher le mot de passe"}
             </button>

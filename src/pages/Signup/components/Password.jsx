@@ -1,7 +1,8 @@
 import {useState} from 'react';
 import croix from '../../../assets/validator/croix.png'
 import check from '../../../assets/validator/check.png'
-import '../../../styles/validator.css'
+import open from '../../../assets/cadena/open.png'
+import close from '../../../assets/cadena/close.png'
 
 function Password({password, setPassword, setPasswordError}) {
 
@@ -29,14 +30,17 @@ function Password({password, setPassword, setPasswordError}) {
     }
 
     return (
-        <div>
-            <label>Mot de passe: </label>
-            <input type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => handlePassword(e.target.value)} />
-            <button type="button" onClick={togglePassword}>
-                    {showPassword ? "Cacher le mot de passe" : "Afficher le mot de passe"}
-            </button>
+        <div className='password-field'>
+            <label className='password-label'>Mot de passe: </label>
+            <div className='password-full-input'>
+                <input className='password-input'
+                    type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={(e) => handlePassword(e.target.value)} />
+                <button className='password-button' type="button" onClick={togglePassword}>
+                        {showPassword ?  <img src={open} alt="A" className='cadena-open'/> : <img src={close} alt="C" className='cadena-close'/>}
+                </button>
+            </div>
             <div className={validSize ? "correct" : "incorrect"}>
                 {validSize ? <img src={check} alt="check" className='img-check' /> : <img src={croix} alt="check" className='img-croix'/>}
                 <p>Taille entre 8 et 20 caractères</p></div>

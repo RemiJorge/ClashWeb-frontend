@@ -1,6 +1,4 @@
-import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import '../../styles/navigation.css'
 
 function Navigation(){
     //verify if the user is connected
@@ -8,23 +6,34 @@ function Navigation(){
     //if no, display the navigation without the player, ranking, settings and shop links
     const navigate = useNavigate()
     const token = localStorage.getItem('authToken')
-    const isLogged = token ? true : false
+    const isModo = localStorage.getItem('isModo') === 'true'
+    let currentPage = window.location.pathname
+    let isLogged = token ? true : false
+
     function handleSignout(){
         localStorage.removeItem('authToken')
+        localStorage.removeItem('isModo')
+        localStorage.removeItem('isAdmin')
+        isLogged = false
         navigate('/')
     }
 
+    function handleClick(dir){
+        navigate(dir)
+        
+    }
+
     return (
-        <nav>
+        <nav className="navigation">
         <ul>
-            <li><Link to="/">Accueil</Link></li>
-            {isLogged && <li><Link to="/player">Joueur</Link></li>}
-            {isLogged && <li><Link to="/ranking">Classement</Link></li>}
-            {isLogged && <li><Link to="/settings">Paramètres</Link></li>}
-            {isLogged && <li><Link to="/shop">Boutique</Link></li>}
-            {isLogged && <button onClick={handleSignout}>Se déconnecter</button>}
-            {!isLogged && <li><Link to="/signup">S'inscrire</Link></li>}
-            {!isLogged && <li><Link to="/login">Se connecter</Link></li>}
+            {!isLogged && <li onClick={() => handleClick("/")}   className={currentPage==="/" ? "selection page-actuelle": "selection"}><p>Accueil</p></li> }
+            {isLogged && <li onClick={() => handleClick("/player")} className={currentPage==="/player" ? "selection page-actuelle": "selection"}><p>Joueur</p></li>}
+            {isLogged && <li onClick={() => handleClick("/recruitment")} className={currentPage.startsWith("/recruitment") ? "selection page-actuelle": "selection"}><p>Recrutement</p></li>}
+            {isLogged && isModo && <li onClick={() => handleClick("/manage")} className={currentPage==="/manage" ? "selection page-actuelle": "selection"}><p>Modération</p></li>}
+            {isLogged && <li onClick={() => handleClick("/settings")} className={currentPage==="/settings" ? "selection page-actuelle": "selection"}><p>Paramètres</p></li>}
+            {isLogged && <button className="clash-button green-button" onClick={handleSignout}>Se déconnecter</button>}
+            {!isLogged && <li onClick={() => handleClick("/signup")} className={currentPage==="/signup" ? "selection page-actuelle": "selection"}><p>Inscription</p></li>}
+            {!isLogged && <li onClick={() => handleClick("/login")} className={currentPage==="/login" ? "selection page-actuelle": "selection"}><p>Connection</p></li>}
         </ul>
         </nav>
     )

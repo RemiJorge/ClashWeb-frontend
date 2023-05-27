@@ -1,0 +1,30 @@
+.container-annonce{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px solid #666d7f;
+    background-color: #bdbdb7;;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px rgba(87, 98, 124, 0.8);
+    margin: 15px 5px;
+    padding: 15px;
+    width: 250px;
+    min-height: 300px;
+    height: fit-content;
+}
+
+.container-annonces{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 100%;
+}
+
+.page-annonce{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    width: 100%;
+}
