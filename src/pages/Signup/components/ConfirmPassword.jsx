@@ -1,6 +1,4 @@
 import {useEffect, useState} from 'react'
-import croix from '../../../assets/validator/croix.png'
-import check from '../../../assets/validator/check.png'
 import '../../../styles/validator.css'
 
 function ConfirmPassword({password, setConfirmPasswordError}) {
@@ -19,12 +17,12 @@ function ConfirmPassword({password, setConfirmPasswordError}) {
         }, [password, confirmPassword, setConfirmPasswordError])
 
         return (
-            <div >
-                <div className="input-container ic1 login-mdp-container">
+            <div className="password-field">
+                <div className="signup-input-container ic1 login-mdp-container">
                     <input type={showPassword ? "text" : "password"}
                         value={confirmPassword}
                         id="signup-confirm-password"
-                        className="input"
+                        className="input login-mdp"
                         placeholder=" "
                         onChange={(e) => setConfirmPassword(e.target.value)} />
                     <div class="cut cut-long"></div>
@@ -34,8 +32,8 @@ function ConfirmPassword({password, setConfirmPasswordError}) {
                     </button>
                 </div>                    
                 {samePassword ? 
-                <div className="correct"><img src={check} alt="check" className="img-check" /><p>Les mots de passe sont identiques</p></div> : 
-                <div className="incorrect"><img src={croix} alt="croix" className="img-croix" /><p>Les mots de passe ne sont pas identiques</p></div>
+                <div className="correct"><p>Les mots de passe sont identiques</p></div> : 
+                <div className="incorrect"><p>Les mots de passe ne sont pas identiques</p></div>
                 }
 
             </div>

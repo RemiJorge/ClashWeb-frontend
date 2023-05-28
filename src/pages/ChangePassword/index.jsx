@@ -54,15 +54,15 @@ function ChangePassword() {
 
     return (
         <div className="page-container">
-            <h1>Changer de mot de passe</h1>
-            <form onSubmit={handleSummit}>
+            <h1 className="ic1">Changer de mot de passe</h1>
+            <form onSubmit={handleSummit} className="formulaire">
                 {changeSuccess ? <p>Mot de passe changé avec succès</p> :
                 <>
                     <OldPassword password={password} setPassword={setPassword} setWrongPassword={setWrongPassword} />
                     {wrongPassword && <p className='incorrect'>Mot de passe incorrect</p>}
                     <NewPassword password={newPassword} setPassword={setNewPassword} setPasswordError={setNewPasswordError} />
                     <ConfirmPassword password={newPassword} setConfirmPasswordError={setConfirmPasswordError} />
-                    <input type="submit" value="Changer de mot de passe" />
+                    <input type="submit" className="clash-button red-button mb" value="Confirmer" />
                 </>}
             </form>
         </div>

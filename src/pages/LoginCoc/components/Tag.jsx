@@ -1,10 +1,13 @@
-function Email({tag, setTag}) {
+function Email({tag, setTag, setWrongTagOrToken}) {
     return (
-        <div>
-            <label>Tag: </label>
-                <input type="text" 
-                    value={tag} 
-                    onChange={(e) => setTag(e.target.value)}/>
+        <div className="input-container ic1 max-login-coc">
+            <input type="text" 
+                value={tag} 
+                className = "input"
+                placeholder=" "
+                onChange={(e) => {setTag(e.target.value); setWrongTagOrToken(false)}} />
+            <div class="cut"></div>
+            <label className="placeholder">Tag #</label>
         </div>
     )
 }

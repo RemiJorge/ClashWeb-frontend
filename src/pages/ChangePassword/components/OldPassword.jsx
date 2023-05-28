@@ -9,13 +9,16 @@ function OldPassword({password, setPassword, setWrongPassword}) {
     }
 
     return (
-        <div>
-            <label>Ancien mot de passe: </label>
+        <div className="input-container ic1 login-mdp-container password-field">
             <input type={showPassword ? "text" : "password"} 
-                value={password} 
+                value={password}
+                className="input login-mdp"
+                placeholder=" "
                 onChange={(e) => {setPassword(e.target.value); setWrongPassword(false)}}/>
-            <button type="button" onClick={togglePassword}>
-                {showPassword ? "Cacher le mot de passe" : "Afficher le mot de passe"}
+            <div class="cut cut-long"></div>
+            <label class="placeholder">Ancien MDP</label>
+            <button type="button" className="clash-button blue-button mdp-button" onClick={togglePassword}>
+                {showPassword ? "Cacher" : "Afficher"}
             </button>
         </div>
     )

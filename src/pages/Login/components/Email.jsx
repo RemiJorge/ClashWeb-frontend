@@ -8,7 +8,7 @@ function Email({email, setEmail, setWrongEmailOrPassword}) {
                     placeholder=" "
                     onChange={(e) => {setEmail(e.target.value); setWrongEmailOrPassword(false)}}/>
                 <div class="cut"></div>
-                <label for="login-email" class="placeholder">Email</label>
+                <label class="placeholder">Email</label>
         </div>
     )
 }

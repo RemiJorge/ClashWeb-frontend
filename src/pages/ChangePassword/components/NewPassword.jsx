@@ -26,14 +26,19 @@ function Password({password, setPassword, setPasswordError}) {
     }
 
     return (
-        <div>
-            <label>Nouveau mot de passe: </label>
-            <input type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => handlePassword(e.target.value)} />
-            <button type="button" onClick={togglePassword}>
-                    {showPassword ? "Cacher le mot de passe" : "Afficher le mot de passe"}
-            </button>
+        <div className="password-field">
+            <div className="signup-input-container ic1 login-mdp-container">
+                <input type={showPassword ? "text" : "password"}
+                        value={password}
+                        className="input login-mdp"
+                        placeholder=" "
+                        onChange={(e) => handlePassword(e.target.value)} />
+                <div class="cut cut-long"></div>
+                <label className="placeholder">Nouveau MDP</label>
+                <button type="button" className="clash-button blue-button mdp-button" onClick={togglePassword}>
+                        {showPassword ? "Cacher" : "Afficher"}
+                </button>
+            </div>
             <p className={validSize ? "correct" : "incorrect"}>Taille entre 8 et 20 caractères</p>
             <p className={validCharacter ? "correct" : "incorrect"}>Caractères autorisés: lettres, chiffres, spéciaux </p>
             <p className={validNumber ? "correct" : "incorrect"}>Au moins un chiffre</p>

@@ -13,7 +13,7 @@ function Password({password, setPassword, setWrongEmailOrPassword}) {
             <input type={showPassword ? "text" : "password"} 
                 value={password} 
                 id="login-mdp"
-                className="input"
+                className="input login-mdp"
                 placeholder=" "
                 onChange={(e) => {setPassword(e.target.value); setWrongEmailOrPassword(false)}}/>
             <div class="cut cut-long"></div>

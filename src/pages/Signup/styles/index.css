@@ -1,0 +1,11 @@
+.password-field {
+    width: 80%;
+    max-width: 500px;
+}
+
+.signup-input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  

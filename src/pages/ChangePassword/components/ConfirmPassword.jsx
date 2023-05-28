@@ -16,14 +16,19 @@ function ConfirmPassword({password, setConfirmPasswordError}) {
         }, [password, confirmPassword, setConfirmPasswordError])
 
         return (
-            <div>
-                <label>Confirmer le mot de passe: </label>
-                <input type={showPassword ? "text" : "password"}
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)} />
-                <button type="button" onClick={togglePassword}> 
-                        {showPassword ? "Cacher le mot de passe" : "Afficher le mot de passe"}
-                </button>
+            <div className="password-field">
+                <div className="signup-input-container ic1 login-mdp-container">
+                    <input type={showPassword ? "text" : "password"}
+                        value={confirmPassword}
+                        className='input login-mdp'
+                        placeholder=" "
+                        onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <div class="cut cut-long"></div>
+                    <label className="placeholder">Confirmation</label>
+                    <button type="button" className="clash-button blue-button mdp-button" onClick={togglePassword}> 
+                            {showPassword ? "Cacher" : "Afficher"}
+                    </button>
+                </div>
                 <p className={samePassword ? "correct" : "incorrect"}>Les mots de passe {samePassword ? "sont" : "ne sont pas"} identiques</p>
             </div>
         )

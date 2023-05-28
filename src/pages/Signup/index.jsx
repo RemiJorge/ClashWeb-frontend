@@ -57,7 +57,7 @@ function Signup() {
 
     return (
         <div className='page-connection'>
-            <h1>S'inscrire</h1>
+            <h1 className="ic1">S'inscrire</h1>
             <form className="formulaire" onSubmit={handleSummit}>
 
                 <Email email={email} setEmail={setEmail} emailError={emailError} setEmailError={setEmailError} emailAlreadyExist={emailAlreadyExist} setEmailAlreadyExist={setEmailAlreadyExist}/>

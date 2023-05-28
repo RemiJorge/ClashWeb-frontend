@@ -24,7 +24,7 @@ code {
   background-image: url('../assets/bg/background2.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-attachment: fixed;
 }
 

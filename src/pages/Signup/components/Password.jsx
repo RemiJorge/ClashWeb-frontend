@@ -27,8 +27,8 @@ function Password({password, setPassword, setPasswordError}) {
 
     return (
         <div className='password-field'>
-            <div className='input-container ic1 login-mdp-container'>
-                <input className='input'
+            <div className='signup-input-container ic1 login-mdp-container'>
+                <input className='input login-mdp'
                     type={showPassword ? "text" : "password"}
                     id = "signup-password"
                     placeholder=" "

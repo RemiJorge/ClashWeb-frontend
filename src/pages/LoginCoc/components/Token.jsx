@@ -1,13 +1,16 @@
 
 
-function Password({token, setToken}) {
+function Password({token, setToken, setWrongTagOrToken}) {
 
     return (
-        <div>
-            <label>Token: </label>
+        <div className="input-container ic1 max-login-coc">
             <input type="text" 
-                value={token} 
-                onChange={(e) => setToken(e.target.value)} />
+                value={token}
+                className = "input"
+                placeholder=" "
+                onChange={(e) => {setToken(e.target.value); setWrongTagOrToken(false)}} />
+            <div class="cut cut"></div>
+            <label className="placeholder">Token</label>
         </div>
     )
 }

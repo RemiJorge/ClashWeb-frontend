@@ -33,15 +33,18 @@ function ForgetPassword(){
     }
 
     return (
-        <div>
-            <h1>Mot de passe oublié</h1>
-            <form onSubmit={handleSummit}>
+        <div className="page-connection">
+            <h1 className="ic1">Mot de passe oublié</h1>
+            <form onSubmit={handleSummit} className='formulaire'>
                 {emailSend ? <p>Email envoyé avec votre nouveau mot de passe à {email}</p> : <>
                 <p>Un email vous sera envoyé pour réinitialiser votre mot de passe</p>
-                <label>Email: </label>
-                <input type="email" value={email} onChange={(e) => {setEmail(e.target.value); setWrongEmail(false)}}/>
+                <div className="input-container ic1">
+                    <input type="email" placeholder=" " className="input" value={email} onChange={(e) => {setEmail(e.target.value); setWrongEmail(false)}}/>
+                    <div className="cut"></div>
+                    <label className="placeholder">Email</label>
+                </div>
                 {wrongEmail && <p className='incorrect'>Email incorrect</p>}
-                <input type="submit" value="Envoyer" /></>}
+                <input className="clash-button green-button ic1" type="submit" value="Envoyer" /></>}
             </form>
         </div>
     )

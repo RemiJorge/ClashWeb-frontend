@@ -35,11 +35,12 @@ function Settings(){
 
     return (
         <div className="page-container">
-            <h1>Settings</h1>
-            <Link to="/changepassword">Changer de mot de passe</Link>
-            {playerTag != null ? <button className="clash-button red-button" onClick={handleClickDelete}>Supprimer le Joueur</button>:
-            <button className="clash-button green-button" onClick={handleClickCreate}>Lier son compte clash</button>}
-        
+            <h1 className="ic1">Settings</h1>
+            <div className="formulaire ic1">
+                <Link to="/changepassword" className="clash-button blue-button">Changer de mot de passe</Link>
+                {playerTag != null ? <button className="clash-button red-button ic1" onClick={handleClickDelete}>Supprimer le Joueur</button>:
+                <button className="clash-button green-button" onClick={handleClickCreate}>Lier son compte clash</button>}
+            </div>
         </div>
     )
 }
