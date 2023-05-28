@@ -16,7 +16,7 @@ function Recrutement(){
 
     //affiche tous les utilisateurs recupérés dans la base de données
     return (
-        <>
+        <div className="page-container">
             <div className="selection-container">
                 <div className={currentPage === "/recruitment/players" ?  "clash-selection current-selection" : "clash-selection"} 
                     onClick = {() => handleClick("/recruitment/players")}> 
@@ -33,7 +33,7 @@ function Recrutement(){
             </Routes>
 
 
-        </>
+        </div>
     )
 }
 

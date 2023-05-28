@@ -53,7 +53,7 @@ function ChangePassword() {
     }
 
     return (
-        <div>
+        <div className="page-container">
             <h1>Changer de mot de passe</h1>
             <form onSubmit={handleSummit}>
                 {changeSuccess ? <p>Mot de passe changé avec succès</p> :

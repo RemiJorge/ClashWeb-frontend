@@ -49,7 +49,7 @@ function Player(){
 
 
     return (
-        <div>
+        <div className="page-container">
             {loading ? <Loader /> :
             erreur ? <p>Erreur lors de chargement des données, réessayer plus tard</p> :
             <>

@@ -12,6 +12,7 @@ function Navigation(){
 
     function handleSignout(){
         localStorage.removeItem('authToken')
+        localStorage.removeItem('playerTag')
         localStorage.removeItem('isModo')
         localStorage.removeItem('isAdmin')
         isLogged = false

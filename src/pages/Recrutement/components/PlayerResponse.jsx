@@ -26,6 +26,22 @@ function PlayerResponse({isResponse, setIsResponse}){
     }, [])
     
 
+    function handleClickRemove(idItem) {
+        const token_user = localStorage.getItem('authToken')
+        axios.delete(`${serverUrl}/api/messageannonce/${idItem}`, {
+            headers: {
+                Authorization: `Bearer ${token_user}`
+            }
+        })
+            .then((resp) => {
+                console.log('Response:', resp.data);
+                setResponses(responses.filter((item) => item._id !== idItem))
+            })
+            .catch((error) => {
+                console.error('Error:', error.resp.data);
+            });
+    }
+
 
     return (
         <div>
@@ -39,6 +55,7 @@ function PlayerResponse({isResponse, setIsResponse}){
                         <div>{response.ClanId.level}</div>
                         <div>{response.playerClan.name}</div>
                         <div>{response.playerClan.expLevel}</div>
+                        <button className="clash-button red-button" onClick={() => handleClickRemove(response._id)}>X</button>
                     </div>
             )})}
         </div>

@@ -1,6 +1,6 @@
 function Error() {
     return (
-        <div>
+        <div className="page-container">
             <h1>Cette page n'existe pas</h1>
         </div>
     )

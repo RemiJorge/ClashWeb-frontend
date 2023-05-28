@@ -36,7 +36,7 @@ function Login() {
 
 
     return (
-        <div>
+        <div className="page-container">
             <h1>Se connecter à clash of clans</h1>
             <form onSubmit={handleSummit}>
                 <Tag tag={tag} setTag={setTag} />

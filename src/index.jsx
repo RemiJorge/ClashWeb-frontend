@@ -24,23 +24,21 @@ root.render(
   <>
     <Router>
       <div className = "background">
-      <Header/>
-      <div className="page-container">
-      <Routes>
-        <Route index element={<Home/>}/>
-        <Route path="login" element={<Login/>}/>
-        <Route path="logincoc" element={<LoginCoc/>}/>
-        <Route path="signup" element={<Signup/>}/>
-        <Route path="forgetpassword" element={<ForgetPassword/>}/>
-        <Route path="player/:id" element={<Player/>}/>
-        <Route path="player" element={<Player/>}/>
-        <Route path="recruitment/*" element={<Recrutement/>}/>
-        <Route path="manage" element={<Manage/>}/>
-        <Route path="settings" element={<Settings/>}/>
-        <Route path="changepassword" element={<ChangePassword/>}/>
-        <Route path="*" element={<Error/>}/>
-      </Routes>
-      </div>
+        <Header/>
+        <Routes>
+          <Route index element={<Home/>}/>
+          <Route path="login" element={<Login/>}/>
+          <Route path="logincoc" element={<LoginCoc/>}/>
+          <Route path="signup" element={<Signup/>}/>
+          <Route path="forgetpassword" element={<ForgetPassword/>}/>
+          <Route path="player/:id" element={<Player/>}/>
+          <Route path="player" element={<Player/>}/>
+          <Route path="recruitment/*" element={<Recrutement/>}/>
+          <Route path="manage" element={<Manage/>}/>
+          <Route path="settings" element={<Settings/>}/>
+          <Route path="changepassword" element={<ChangePassword/>}/>
+          <Route path="*" element={<Error/>}/>
+        </Routes>
       </div>
     </Router>
   </>

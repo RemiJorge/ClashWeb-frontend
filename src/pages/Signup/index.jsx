@@ -56,9 +56,9 @@ function Signup() {
     }   
 
     return (
-        <div className='container'>
+        <div className='page-connection'>
             <h1>S'inscrire</h1>
-            <form onSubmit={handleSummit}>
+            <form className="formulaire" onSubmit={handleSummit}>
 
                 <Email email={email} setEmail={setEmail} emailError={emailError} setEmailError={setEmailError} emailAlreadyExist={emailAlreadyExist} setEmailAlreadyExist={setEmailAlreadyExist}/>
 
@@ -66,7 +66,7 @@ function Signup() {
 
                 <ConfirmPassword password={password} setConfirmPasswordError={setConfirmPasswordError} />
 
-                <input type="submit" value="S'inscrire" />
+                <input type="submit" className="clash-button green-button" value="S'inscrire" />
             </form>
         </div>
     )

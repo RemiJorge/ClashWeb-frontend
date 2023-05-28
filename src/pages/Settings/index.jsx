@@ -34,7 +34,7 @@ function Settings(){
 
 
     return (
-        <div>
+        <div className="page-container">
             <h1>Settings</h1>
             <Link to="/changepassword">Changer de mot de passe</Link>
             {playerTag != null ? <button className="clash-button red-button" onClick={handleClickDelete}>Supprimer le Joueur</button>:

@@ -9,8 +9,8 @@ body {
   align-items: flex-end;
   justify-content: center;
   padding: 0px;
-  height: 100px;
-  background-color: #5d5451;
+  min-height: 100px;
+  background-color: #5d545100;
   }
   
   .navigation {
@@ -19,26 +19,32 @@ body {
     height: auto;
     color: #fff;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: flex-end;
     padding: 0px;
     margin: 0px;
-    height: 80px;
+    height: 100%;
     width: 80%;
+    min-width: 700px;
   }
+
   
   nav ul {
     list-style-type: none;
+    position: relative;
+    top: 1px;
     margin: 0px;
     padding: 0px;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: center;
   }
   
   .selection {
     cursor: pointer;
-    margin: 0 10px;
+    margin: 0 1%;
     background-color: #787165;
     justify-content: flex-end;
     border-color: #aaa;
@@ -49,7 +55,7 @@ body {
   
   .selection p {
     margin : 0px;
-    padding : 20px 25px;
+    padding : 20px 2vw;
     font-family: 'Supercell', sans-serif;
     text-decoration: none;
     color: #fff;
@@ -69,4 +75,24 @@ body {
     font-style: normal;
   }
   
-  
+  /* Ajout du media query pour la mise en page responsive */
+@media (max-width: 768px) {
+
+  .selection {
+    border-bottom-width: 1px;
+    border-radius: 10px;
+  }
+
+  nav ul{
+    flex-wrap: wrap;
+    align-items: space-around;
+    max-width: 100vw;
+    height: 50vh;
+  }
+
+  nav ul li{
+    margin : 10px;
+    width: 150px;
+    text-align: center;
+  }
+}

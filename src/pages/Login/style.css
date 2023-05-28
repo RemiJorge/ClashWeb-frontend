@@ -1,0 +1,120 @@
+.page-connection{
+    border-radius: 10px;
+    width: 50%;
+    margin : 0 auto;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    min-width: 450px;
+    background-color: #e8e8e1;
+    border: 1px solid #aaa;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.538);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 80%;
+}
+
+.login-mdp-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ic1 {
+  margin-top: 60px;
+}
+
+
+.input {
+  background-color: #fff;
+  border-radius: 12px;
+  border: 2px solid #787165;
+  box-shadow: inset 1px 4px 2px rgba(120, 113, 101, 0.37), inset 0px -3px 2px rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  color: #787165;
+  font-size: 22px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.cut {
+  background-color: #e8e8e1;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 75px;
+}
+
+.cut-long{
+  width: 164px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  font-family: 'Supercell';
+  color: #ccc;
+  left: 20px;
+  font-size: 23px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-33px) translateX(10px) scale(0.80);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #787165;
+}
+
+.input:focus ~ .placeholder {
+  color: #fff;
+  text-shadow: 1px 3px 0px #000, 0px 2px 0px #000, 1px 0px 0px #000,
+    0px -1px 0px #000, -1px 0px 0px #000;
+}
+
+
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.mdp-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 117px;
+}
+
+#login-mdp{
+  width: 70%;
+}
+

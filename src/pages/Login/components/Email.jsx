@@ -1,12 +1,15 @@
 function Email({email, setEmail, setWrongEmailOrPassword}) {
     return (
-        <div>
-            <label>email: </label>
-                <input type="text" 
-                    value={email} 
+        <div className="input-container ic1">
+                <input type="email" 
+                    value={email}
+                    id="login-email"
+                    className="input"
+                    placeholder=" "
                     onChange={(e) => {setEmail(e.target.value); setWrongEmailOrPassword(false)}}/>
+                <div class="cut"></div>
+                <label for="login-email" class="placeholder">Email</label>
         </div>
     )
 }
-
 export default Email

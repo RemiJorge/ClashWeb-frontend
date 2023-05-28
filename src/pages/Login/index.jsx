@@ -3,6 +3,7 @@ import {useNavigate, Link} from 'react-router-dom'
 import axios from 'axios'
 import Email from './components/Email'
 import Password from './components/Password'
+import './style.css'
 
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 
@@ -47,14 +48,14 @@ function Login() {
 
 
     return (
-        <div>
-            <h1>Se connecter</h1>
-            <form onSubmit={handleSummit}>
+        <div className="page-connection">
+            <h1 className="ic1">Se connecter</h1>
+            <form onSubmit={handleSummit} className="formulaire">
                 <Email email={email} setEmail={setEmail} setWrongEmailOrPassword={setWrongEmailOrPassword} />
                 <Password password={password} setPassword={setPassword} setWrongEmailOrPassword={setWrongEmailOrPassword} />
                 {wrongEmailOrPassword && <p className='incorrect'>email ou mot de passe incorrect</p>}
-                <Link to="/forgetpassword">Mot de passe oublié</Link>
-                <input type="submit" value="Se connecter" />
+                <input type="submit" className="clash-button green-button ic1" value="Se connecter" />
+                <Link to="/forgetpassword" className="clash-button blue-button ic1">Mot de passe oublié</Link>
             </form>
         </div>
     )

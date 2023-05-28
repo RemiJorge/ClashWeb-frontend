@@ -9,13 +9,17 @@ function Password({password, setPassword, setWrongEmailOrPassword}) {
     }
 
     return (
-        <div>
-            <label>Mot de passe: </label>
+        <div className="input-container ic1 login-mdp-container">
             <input type={showPassword ? "text" : "password"} 
                 value={password} 
+                id="login-mdp"
+                className="input"
+                placeholder=" "
                 onChange={(e) => {setPassword(e.target.value); setWrongEmailOrPassword(false)}}/>
-            <button type="button" onClick={togglePassword}>
-                {showPassword ? "Cacher le mot de passe" : "Afficher le mot de passe"}
+            <div class="cut cut-long"></div>
+            <label for="login-mdp" class="placeholder">Mot de passe</label>
+            <button type="button" className="clash-button blue-button mdp-button" onClick={togglePassword}>
+                {showPassword ? "Cacher" : "Afficher"}
             </button>
         </div>
     )

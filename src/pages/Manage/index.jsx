@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import User from "./components/User"
 import Loader from "../../components/Loader"
+import './style.css'
 
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 
@@ -32,7 +33,7 @@ function Manage(){
                 
     //affiche tous les utilisateurs recupérés dans la base de données
     return (
-        <div>
+        <div className="page-container">
             <h1>Gérer les utilisateurs</h1>
             {loading ? <Loader /> :
             users.map((user) => {

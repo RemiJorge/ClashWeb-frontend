@@ -46,11 +46,8 @@ function Players() {
                 console.log('Response:', response.data);
                 if (response.data) {
                     setAnnonce(response.data)
-                    setHasPlayer(true)
-                    setIsElder(response.data.playerId.role === 'elder' || response.data.playerId.role === 'coLeader' || response.data.playerId.role === 'leader')
                     setHasAnnonce(true)
                 }
-                setLoading(false)
             }
             )
             .catch((error) => {
@@ -59,15 +56,33 @@ function Players() {
                     if (error.response.data.message === 'no annonce found') {
                         setHasPlayer(true)
                         setHasAnnonce(false)
-                        setLoading(false)
                     }
                     if (error.response.data.message === 'no player linked') {
                         setHasPlayer(false)
                         setHasAnnonce(false)
-                        setLoading(false)
                     }
                 }
             })
+
+        axios.get(`${serverUrl}/api/coc/player`, {
+            headers: {
+                Authorization: `Bearer ${token_user}`
+            }
+        })
+            .then((response) => {
+                console.log('Response:', response.data);
+                setHasPlayer(true)
+                setIsElder(response.data.role === 'elder' || response.data.role === 'coLeader' || response.data.role === 'leader')
+                setLoading(false)
+            }
+            )
+            .catch((error) => {
+                console.error('Error:', error);
+                setLoading(false)
+            }
+            )
+
+    
     }, [])
 
     function handleClickDelete() {

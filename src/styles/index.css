@@ -20,8 +20,12 @@ code {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  background-color: #5d5451;
   flex-direction: column;
+  background-image: url('../assets/bg/background2.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .page-container {
@@ -29,5 +33,23 @@ code {
   margin: 0 10px;
   margin-bottom: 60px;
   min-height: 80vh;
+  border: 1px solid #aaa;
   background-color: #e8e8e1;
+}
+
+.supercell-font {
+  font-family: 'Supercell';
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 3px 0px #000, 0px 2px 0px #000, 1px 0px 0px #000, 0px -1px 0px #000, -1px 0px 0px #000;
+}
+
+h1{
+  font-family: 'Supercell';
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 3px 0px #000, 0px 2px 0px #000, 1px 0px 0px #000, 0px -1px 0px #000, -1px 0px 0px #000;
+  font-size: 200%;
+  margin: 2%;
+  text-align: center;
 }
