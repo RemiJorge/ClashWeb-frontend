@@ -57,6 +57,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 40%;
+    max-width: 120px;
     height: 70%;
     min-width: 100px;
     background-repeat: no-repeat;
@@ -68,6 +69,7 @@
     position: relative;
     width: 90%;
     height: 90%;
+    max-width: 55px;
 }
 
 .annonce-player-main-info-container{
@@ -76,6 +78,8 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    max-width: 300px;
+    overflow: hidden;
 }
 
 .annonce-player-trophies-number{
