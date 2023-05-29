@@ -66,42 +66,50 @@ function PlayerForm({ setIsFilling, hasAnnonce, setHasAnnonce, annonce, setAnnon
 
   return (
     <>
-      <button onClick={() => setIsFilling(false)}>Retour</button>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Minimum Level:
-          <input
-            type="number"
-            value={minimumLevel}
-            min={1}
-            max={50}
-            onChange={(e) => setMinimumLevel(Number(e.target.value))}
-            />
-        </label>
-        <br />
-        <label>
-          Minimum Trophies:
-          <input
-            type="number"
-            value={minimumTrophies}
-            min={0}
-            max={50000}
-            onChange={(e) => setMinimumTrophies(Number(e.target.value))}
-            />
-        </label>
-        <br />
-        <label>
-          Description (maximum 200 caractères):
-          <textarea
-            value={description}
-            maxLength={200}
-            onChange={(e) => setDescription(e.target.value)}
-            />
-        </label>
-        <br />
-        <button type="submit">{hasAnnonce ?
-          'Modifier mon annonce' :
-          'Créer mon annonce'}</button>
+      <form onSubmit={handleSubmit} className="formulaire-player">
+        <div className="form-section-titre supercell-font"> Critères pour le clan que vous recherchez </div>
+        <div className="form-section-nombre ic1">
+          <label className='supercell-font'>
+            Niveau minimum : 
+          </label>
+            <input
+              type="number"
+              value={minimumLevel}
+              className="input-number"
+              min={1}
+              max={20}
+              onChange={(e) => setMinimumLevel(Number(e.target.value))}
+              />
+        </div>
+        <div className="form-section-nombre ic1">
+          <label className='supercell-font'>
+            Trophées minimum :
+          </label>
+            <input
+              type="number"
+              className="input-number"
+              value={minimumTrophies}
+              min={0}
+              max={50000}
+              onChange={(e) => setMinimumTrophies(Number(e.target.value))}
+              />
+        </div>
+        <div className="form-section-text ic1">
+          <label className='supercell-font'>
+            Description (maximum 200 caractères):
+          </label>
+            <textarea
+              value={description}
+              maxLength={200}
+              onChange={(e) => setDescription(e.target.value)}
+              />
+        </div>
+        <div className="form-section-button ic1 mb">
+          <button className="clash-button green-button" type="submit">{hasAnnonce ?
+            'Modifier mon annonce' :
+            'Créer mon annonce'}</button>
+          <button className="clash-button red-button" onClick={() => setIsFilling(false)}>Retour</button>
+        </div>
       </form>
     </>
   );

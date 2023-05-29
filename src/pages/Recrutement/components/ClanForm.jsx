@@ -4,7 +4,7 @@ import axios from 'axios';
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 
 function ClanForm({ setIsFilling, hasAnnonce, setHasAnnonce, annonce, setAnnonce }) {
-  const [minimumLevel, setMinimumLevel] = useState(1);
+  const [minimumTh, setMinimumTh] = useState(1);
   const [minimumTrophies, setMinimumTrophies] = useState(0);
   const [description, setDescription] = useState('');
 
@@ -12,7 +12,7 @@ function ClanForm({ setIsFilling, hasAnnonce, setHasAnnonce, annonce, setAnnonce
     console.log('hasAnnonce:', hasAnnonce);
     console.log('annonce:', annonce);
     if (hasAnnonce) {
-      if (annonce.minimumLevel) setMinimumLevel(annonce.minimumLevel);
+      if (annonce.minimumTh) setMinimumTh(annonce.minimumTh);
       if (annonce.minimumTrophies) setMinimumTrophies(annonce.minimumTrophies);
       if (annonce.description) setDescription(annonce.description);
     }
@@ -27,7 +27,7 @@ function ClanForm({ setIsFilling, hasAnnonce, setHasAnnonce, annonce, setAnnonce
     }
 
     const requestBody = {
-      minimumLevel,
+      minimumTh,
       minimumTrophies,
       description: truncatedDescription,
     };
@@ -66,42 +66,52 @@ function ClanForm({ setIsFilling, hasAnnonce, setHasAnnonce, annonce, setAnnonce
 
   return (
     <>
-      <button onClick={() => setIsFilling(false)}>Retour</button>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Minimum Level:
+      <form onSubmit={handleSubmit} className="formulaire-player">
+        <div className="form-section-titre supercell-font"> Critères pour les joueurs que vous recherchez </div>
+        <div className="form-section-nombre ic1">
+          <label className='supercell-font'>
+            Hotel de Ville minimum:
+          </label>
+            <input
+              type="number"
+              className='input-number'
+              value={minimumTh}
+              min={1}
+              max={50}
+              onChange={(e) => setMinimumTh(Number(e.target.value))}
+            />
+        </div>
+        <div className="form-section-nombre ic1">
+          <label className='supercell-font'>
+            Minimum Trophies:
+          </label>
           <input
             type="number"
-            value={minimumLevel}
-            min={1}
-            max={50}
-            onChange={(e) => setMinimumLevel(Number(e.target.value))}
-          />
-        </label>
-        <br />
-        <label>
-          Minimum Trophies:
-          <input
-            type="number"
+            className='input-number'
             value={minimumTrophies}
             min={0}
             max={50000}
             onChange={(e) => setMinimumTrophies(Number(e.target.value))}
           />
-        </label>
-        <br />
-        <label>
-          Description (maximum 200 caractères):
+        </div>
+        <div className="form-section-text ic1">
+
+          <label className='supercell-font'>
+            Description (maximum 200 caractères):
+          </label>
           <textarea
             value={description}
             maxLength={200}
             onChange={(e) => setDescription(e.target.value)}
-          />
-        </label>
-        <br />
-        <button type="submit">
-          {hasAnnonce ? 'Modifier ma proposition' : 'Créer ma proposition'}
-        </button>
+            />
+
+        </div>
+        <div className="form-section-button ic1 mb">
+          <button className="clash-button green-button" type="submit">
+            {hasAnnonce ? 'Modifier ma proposition' : 'Créer ma proposition'}
+          </button>
+          <button className="clash-button red-button" onClick={() => setIsFilling(false)}>Retour</button>
+        </div>
       </form>
     </>
   );

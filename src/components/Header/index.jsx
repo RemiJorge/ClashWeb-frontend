@@ -9,7 +9,6 @@ function Header() {
   return (
     <header>
         <div className="header">
-        <div className="player-info"></div>
         <Navigation />
         </div>
     </header>

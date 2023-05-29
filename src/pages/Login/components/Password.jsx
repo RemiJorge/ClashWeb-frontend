@@ -16,8 +16,8 @@ function Password({password, setPassword, setWrongEmailOrPassword}) {
                 className="input login-mdp"
                 placeholder=" "
                 onChange={(e) => {setPassword(e.target.value); setWrongEmailOrPassword(false)}}/>
-            <div class="cut cut-long"></div>
-            <label for="login-mdp" class="placeholder">Mot de passe</label>
+            <div className="cut cut-long"></div>
+            <label className="placeholder">Mot de passe</label>
             <button type="button" className="clash-button blue-button mdp-button" onClick={togglePassword}>
                 {showPassword ? "Cacher" : "Afficher"}
             </button>

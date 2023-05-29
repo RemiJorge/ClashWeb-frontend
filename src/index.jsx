@@ -39,6 +39,7 @@ root.render(
           <Route path="changepassword" element={<ChangePassword/>}/>
           <Route path="*" element={<Error/>}/>
         </Routes>
+        <footer className="footer">Site non officiel</footer>
       </div>
     </Router>
   </>

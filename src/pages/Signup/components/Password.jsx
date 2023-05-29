@@ -34,8 +34,8 @@ function Password({password, setPassword, setPasswordError}) {
                     placeholder=" "
                     value={password}
                     onChange={(e) => handlePassword(e.target.value)} />
-                <div class="cut cut-long"></div>
-                <label for="signup-password" class="placeholder">Mot de passe</label> 
+                <div className="cut cut-long"></div>
+                <label className="placeholder">Mot de passe</label> 
                 <button className='clash-button blue-button mdp-button' type="button" onClick={togglePassword}>
                         {showPassword ? "Cacher" : "Afficher"}
                 </button>

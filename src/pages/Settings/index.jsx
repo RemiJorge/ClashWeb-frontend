@@ -38,8 +38,8 @@ function Settings(){
             <h1 className="ic1">Settings</h1>
             <div className="formulaire ic1">
                 <Link to="/changepassword" className="clash-button blue-button">Changer de mot de passe</Link>
-                {playerTag != null ? <button className="clash-button red-button ic1" onClick={handleClickDelete}>Supprimer le Joueur</button>:
-                <button className="clash-button green-button" onClick={handleClickCreate}>Lier son compte clash</button>}
+                {playerTag != null ? <button className="clash-button red-button ic1 mb" onClick={handleClickDelete}>Supprimer le Joueur</button>:
+                <button className="clash-button green-button ic1 mb" onClick={handleClickCreate}>Lier son compte clash</button>}
             </div>
         </div>
     )

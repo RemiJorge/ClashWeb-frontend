@@ -35,11 +35,12 @@ function Manage(){
     return (
         <div className="page-container">
             <h1 className="ic1">Gérer les utilisateurs</h1>
-            {loading ? <Loader /> :
-            users.map((user) => {
-                return <User key={user._id} user={user} />
-            })}
-
+            <div>
+                {loading ? <Loader /> :
+                users.map((user) => {
+                    return <User key={user._id} user={user} />
+                })}
+            </div>
         </div>
     )
 }

@@ -1,0 +1,79 @@
+.manage-user-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid #787165;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    min-height: 40px;
+    box-shadow: 0px 5px 1px rgba(0, 0, 0, 0.151);
+    max-width: 900px;
+    margin : 20px auto;
+    width: 80%;
+}
+
+
+.manage-league-icon{
+    max-width: 40px;
+    max-height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.manage-user-role{
+    font-family: 'Supercell', sans-serif;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 2px 0px #000, 0px 2px 0px #000, 1px 0px 0px #000, 0px -1px 0px #000, -1px 0px 0px #000;
+    width: 15%;
+    min-width: 100px;
+}
+
+.manage-user-mail{
+    font-family: 'Supercell', sans-serif;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 2px 0px #000, 0px 2px 0px #000, 1px 0px 0px #000, 0px -1px 0px #000, -1px 0px 0px #000;
+    width: 30%;
+    min-width: 200px;
+}
+
+.manage-user-league{
+    width: 5%;
+    min-width: 50px;
+}
+
+.manage-user-player{
+    font-family: 'Supercell', sans-serif;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 2px 0px #000, 0px 2px 0px #000, 1px 0px 0px #000, 0px -1px 0px #000, -1px 0px 0px #000;
+    width: 20%;
+    min-width: 150px;
+}
+
+.manage-user-promote{
+    font-family: 'Supercell', sans-serif;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 2px 0px #000, 0px 2px 0px #000, 1px 0px 0px #000, 0px -1px 0px #000, -1px 0px 0px #000;
+    width: 17%;
+    min-width: 150px;
+}
+
+.manage-user-ban{
+    font-family: 'Supercell', sans-serif;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 2px 0px #000, 0px 2px 0px #000, 1px 0px 0px #000, 0px -1px 0px #000, -1px 0px 0px #000;
+    width: 12%;
+    min-width: 100px;
+}
+
+.m0{
+    cursor: pointer;
+}

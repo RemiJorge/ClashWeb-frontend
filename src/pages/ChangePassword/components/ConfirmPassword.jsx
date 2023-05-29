@@ -23,7 +23,7 @@ function ConfirmPassword({password, setConfirmPasswordError}) {
                         className='input login-mdp'
                         placeholder=" "
                         onChange={(e) => setConfirmPassword(e.target.value)} />
-                    <div class="cut cut-long"></div>
+                    <div className="cut cut-long"></div>
                     <label className="placeholder">Confirmation</label>
                     <button type="button" className="clash-button blue-button mdp-button" onClick={togglePassword}> 
                             {showPassword ? "Cacher" : "Afficher"}

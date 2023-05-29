@@ -124,8 +124,6 @@ function AnnoncePlayer({annonce, isElder}){
       };
     
       const townHallImagePath = getTownHallImagePath(annonce.playerId.townHallLevel, annonce.playerId.townHallWeaponLevel);
-      console.log(annonce.playerId.townHallLevel, annonce.playerId.townHallWeaponLevel)
-      console.log("town:", townHallImagePath)
 
     return (
         <div className="container-annonce">
@@ -143,10 +141,9 @@ function AnnoncePlayer({annonce, isElder}){
                 <img className="player-townHall" src={townHallImagePath} alt="town-hall-img" />
             </div>
             <div className="annonce-player-critere">
-                <p>Conditions pour le clan : </p>
-                <p>Niveau minimum: {annonce.minimumLevel}</p>
-                <p>Trophées minimum: {annonce.minimumTrophies}</p>
-                <p>{annonce.description}</p>
+                <p className="supercell-font">Niveau minimum: {annonce.minimumLevel}</p>
+                <p className="supercell-font">Trophées minimum: {annonce.minimumTrophies}</p>
+                <p className="supercell-font">{annonce.description}</p>
             </div>
             {
             loading ? <Loader /> :

@@ -13,7 +13,7 @@ body {
   background-color: #5d545100;
   }
   
-  .navigation {
+  nav {
     padding: 0px;
     margin: 0px;
     height: auto;
@@ -68,6 +68,9 @@ body {
     background-color: #e8e8e1;
   }
 
+  nav button{
+    margin : 20px;
+  }
   @font-face {
     font-family: 'Supercell';
     src: url('../../public/supercell.ttf') format('truetype');
@@ -76,7 +79,11 @@ body {
   }
   
   /* Ajout du media query pour la mise en page responsive */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+
+  .header{
+    margin-bottom: 20px;
+  }
 
   .selection {
     border-bottom-width: 1px;
@@ -87,12 +94,24 @@ body {
     flex-wrap: wrap;
     align-items: space-around;
     max-width: 100vw;
-    height: 50vh;
   }
 
-  nav ul li{
+  .selection{
     margin : 10px;
-    width: 150px;
+    margin-bottom: 20px;
+    width: 180px;
     text-align: center;
   }
+
+  .selection p{
+    padding: 20px;
+  }
+}
+
+.footer{
+  font-family: 'sans-serif';
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+
 }

@@ -33,7 +33,7 @@ function Password({password, setPassword, setPasswordError}) {
                         className="input login-mdp"
                         placeholder=" "
                         onChange={(e) => handlePassword(e.target.value)} />
-                <div class="cut cut-long"></div>
+                <div className="cut cut-long"></div>
                 <label className="placeholder">Nouveau MDP</label>
                 <button type="button" className="clash-button blue-button mdp-button" onClick={togglePassword}>
                         {showPassword ? "Cacher" : "Afficher"}

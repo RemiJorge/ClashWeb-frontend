@@ -106,7 +106,7 @@ function Clans() {
 
   return (
     <div className="page-annonce">
-      <h1>Clan cherche Joueur</h1>
+      <h1 className="ic1">Clan cherche Joueur</h1>
       {loading ? (
         <Loader />
       ) : (
@@ -127,8 +127,8 @@ function Clans() {
           ) : (
             <>
               <div className="container-annonces">
-                <div className="container-annonce">
-                  <h3>Votre annonce</h3>
+                <div className="mon-annonce">
+                  <h3 className="supercell-font">Votre annonce</h3>
                   {hasClan ? (
                     !isElder ? (
                       <> Vous devez être au moins chef ajdjoint pour créer ou modifier une anonce pour votre clan</>):

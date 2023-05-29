@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import Loader from "../../../components/Loader";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 
 function ClanResponse({ isResponse, setIsResponse }) {
   const [responses, setResponses] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const token_user = localStorage.getItem('authToken');
@@ -41,21 +44,29 @@ function ClanResponse({ isResponse, setIsResponse }) {
       });
   }
 
+  function handleClickPlayer(tag) {
+    navigate(`/player/${tag.substring(1)}`)
+  }
+
+
   return (
     <div>
-      <h3>ClanResponse</h3>
-      <button className="clash-button red-button" onClick={() => setIsResponse(false)}>Retour</button>
-      {loading ? <Loader /> :
-        responses.map((response) => {
-          return (
-            <div className="container-reponse-clan" key={response._id}>
-              <div>{response.player.name}</div>
-              <div>{response.player.expLevel}</div>
-              <div>{response.message}</div>
-              <button className="clash-button red-button" onClick={() => handleClickRemove(response._id)}>X</button>
-            </div>
-          )
-        })}
+      <h3 className="supercell-font ml">Proposition de joueur:</h3>
+      <button className="clash-button red-button ml" onClick={() => setIsResponse(false)}>Retour</button>
+      <div>
+        {loading ? <Loader /> :
+          responses.map((response) => {
+            return (
+              <div className="manage-user-container rc0" key={response._id} onClick={() => handleClickPlayer(response.player.tag)}>
+                <div className="manage-user-league rc1">{response.player != null && <img className="manage-league-icon" src={response.player.league.icon.url} alt="league" />}</div>
+                <div className="response-player-xp rc1">{response.player.expLevel}</div>
+                <div className="supercell-font rc2">{response.player.name}</div>
+                <div className="supercell-font rc3">{response.message}</div>
+                <button className="clash-button red-button rc4" onClick={() => handleClickRemove(response._id)}>X</button>
+              </div>
+            )
+          })}
+      </div>
     </div>
   )
 }

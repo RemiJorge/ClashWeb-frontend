@@ -24,8 +24,8 @@ function Email({email, setEmail, emailError, setEmailError, emailAlreadyExist, s
                 placeholder=" "
                 onChange={(e) => {handleEmail(e.target.value)}}
                 onBlur={() => setFirstTry(true)} />
-            <div class="cut"></div>
-            <label for="signup-email" class="placeholder">Email</label>
+            <div className="cut"></div>
+            <label className="placeholder">Email</label>
             {emailAlreadyExist && <p className='incorrect'>Email déjà utilisé</p>}
             {firstTry  && (emailError ? 
                 <div className='incorrect'><p> Incorrect</p> </div>: 

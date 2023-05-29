@@ -1,0 +1,90 @@
+.input-number{
+    background-color: #fff;
+    border-radius: 12px;
+    border: 2px solid #787165;
+    box-shadow: inset 1px 4px 2px rgba(120, 113, 101, 0.37), inset 0px -3px 2px rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    color: #787165;
+    font-size: 22px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 20%;
+    max-width: 90px;
+    min-width: 80px;
+}
+
+.form-section-nombre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.form-section-nombre label{
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    width: 80%;
+    min-width: 180px;
+}
+
+.form-section-text label{
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    width: 100%;
+    min-width: 120px;
+}
+
+.formulaire-player{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0px 20px;
+}
+
+.form-section-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.form-section-text textarea{
+    background-color: #fff;
+    border-radius: 12px;
+    border: 2px solid #787165;
+    box-shadow: inset 1px 4px 2px rgba(120, 113, 101, 0.37), inset 0px -3px 2px rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    color: #787165;
+    font-size: 20px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;;
+    min-height: 100px;
+    max-height: 200px;
+    resize: none;
+    margin-top: 20px;
+}
+
+.form-section-text textarea:focus{
+    border: 2px solid #4a4b77;
+}
+
+.form-section-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+

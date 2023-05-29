@@ -5,6 +5,7 @@ import Loader from "../../../components/Loader";
 import AnnoncePlayer from "./AnnoncePlayer";
 import PlayerResponse from "./PlayerResponse";
 import axios from "axios";
+import "../styles/playerform.css";
 
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 
@@ -105,14 +106,14 @@ function Players() {
 
     return(
         <div className="page-annonce">
-            <h1>Joueur cherche Clan</h1>
+            <h1 className="ic1">Joueur cherche Clan</h1>
             {loading ? <Loader /> :<>
             {isFilling ? <PlayerForm setIsFilling={setIsFilling} hasAnnonce={hasAnnonce} setHasAnnonce={setHasAnnonce} annonce={annonce} setAnnonce={setAnnonce} /> 
             : isResponse ? <PlayerResponse isResponse={isResponse} setIsResponse={setIsResponse} />
             : <> 
             <div className="container-annonces">
-                <div className="container-annonce">
-                    <h3>Votre annonce</h3>
+                <div className="mon-annonce">
+                    <h3 className="supercell-font">Votre annonce</h3>
                     { hasPlayer ? 
                         (hasAnnonce ? <>
                             <button className="clash-button blue-button" onClick={() => setIsFilling(true)}>Modifier</button>
