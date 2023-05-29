@@ -55,7 +55,7 @@ function AnnonceClan({ annonce }) {
       </div>
       <p className="supercell-font">Hotel de Ville minimum: {annonce.minimumTh}</p>
       <p className="supercell-font">Trophées minimum: {annonce.minimumTrophies}</p>
-      <p className="supercell-font">{annonce.description}</p>
+      <p className="supercell-font">Description: {annonce.description}</p>
       {loading ? (
         <Loader />
       ) : envoye === true ? (

@@ -143,7 +143,7 @@ function AnnoncePlayer({annonce, isElder}){
             <div className="annonce-player-critere">
                 <p className="supercell-font">Niveau minimum: {annonce.minimumLevel}</p>
                 <p className="supercell-font">Trophées minimum: {annonce.minimumTrophies}</p>
-                <p className="supercell-font">{annonce.description}</p>
+                <p className="supercell-font">Description: {annonce.description}</p>
             </div>
             {
             loading ? <Loader /> :
