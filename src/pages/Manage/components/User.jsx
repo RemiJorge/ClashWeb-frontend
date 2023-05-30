@@ -47,11 +47,11 @@ function User ({ user }) {
 
 
   return (
-    <div className="manage-user-container m0" onClick={handleClickPlayer}>
+    <div className="manage-user-container" >
         <div className="manage-user-role">{userIsAdmin ? "Admin" : userIsModo ? "Modo" : "Utilisateur"}</div>
         <div className="manage-user-mail">{user.email}</div>
         <div className="manage-user-league">{user.playerId != null && <img className="manage-league-icon" src={user.playerId.league.icon.url} alt="league" />}</div>
-        <div className="manage-user-player"> {user.playerId !== null ? user.playerId.name : 'pas de joueur'}</div>
+        <div className="manage-user-player m0" onClick={handleClickPlayer}> {user.playerId !== null ? user.playerId.name : 'pas de joueur'}</div>
         <div className="manage-user-promote">
           {isAdmin && !userIsAdmin && !userIsBanned && ( userIsModo ?
             <button className="clash-button blue-button" onClick={() => handleClick("demote")}>Rétrograder</button> :
